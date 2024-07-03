@@ -21,14 +21,6 @@ class EmployeeController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
@@ -44,7 +36,7 @@ class EmployeeController extends Controller
             'dateOfBirth' => 'required|date',
             'hireDate' => 'required|date',
             'address' => 'required',
-            'phone' => 'required|numeric|max:20',
+            'phone' => 'required|numeric|max:99999999999999999999',
             'email' => 'required|email|max:128'
         ]);
 

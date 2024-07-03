@@ -18,7 +18,6 @@ use App\Http\Controllers\JobTitleController;
 Route::get('/', [EmployeeController::class, 'getEmployees'])->name('employees');
 Route::post('/employees/store', [EmployeeController::class, 'store'])->name('employees.store');
 Route::get('employees/data', [EmployeeController::class, 'getEmployeesData'])->name('employees.data');
-// Route::get('/employees/{id}', [EmployeeController::class, 'show'])->name('employees.show');
 Route::get('/employees/{employee}', [EmployeeController::class, 'show'])->name('employees.show');
 Route::put('/employees/{employee}', [EmployeeController::class, 'update'])->name('employees.update');
 Route::get('/employees/{employee}/edit', [EmployeeController::class, 'edit'])->name('employees.edit');

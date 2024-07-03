@@ -76,9 +76,27 @@ $(document).ready(function() {
     });
 
     // Show Add Employee Modal
-    $('#addEmployeeModal').on('show.bs.modal', function() {
-        $('#addEmployeeForm')[0].reset();
-        $('#addEmployeeForm').attr('action', '{{ route('employees.store') }}');
+    $('#addEmployeeForm').on('submit', function(event) {
+        event.preventDefault();
+        let phone = $('#addEmployeeForm #phone').val();
+        phone = phone.replace(/\D/g, '');  // Hapus karakter non-digit
+        
+        $.ajax({
+            url: $(this).attr('action'),
+            method: 'POST',
+            data: $(this).serialize() + '&phone=' + phone,  // Tambahkan phone yang telah dibersihkan
+            success: function(response) {
+                $('#addEmployeeModal').modal('hide');
+                $('#employeeTable').DataTable().ajax.reload();  // Reload tabel setelah data baru ditambahkan
+            },
+            error: function(xhr) {
+                // Tampilkan pesan kesalahan dari server
+                let errors = xhr.responseJSON.errors;
+                for (let key in errors) {
+                    alert(errors[key].join(', '));
+                }
+            }
+        });
     });
 
     // Show Edit Employee Modal

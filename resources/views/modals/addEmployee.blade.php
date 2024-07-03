@@ -29,7 +29,6 @@
                         <div class="form-group col-md-4">
                             <label for="department">Department</label>
                             <select class="form-control" id="department" name="departmentID" required>
-                                <option value="" hidden>Select Department</option>
                                 @foreach ($departments as $department)
                                     <option value="{{ $department->id }}">{{ $department->departmentName }}</option>
                                 @endforeach
@@ -38,7 +37,6 @@
                         <div class="form-group col-md-4">
                             <label for="jobTitle">Job Title</label>
                             <select class="form-control" id="jobTitle" name="jobTitleID" required>
-                                <option value="" hidden>Select Job</option>
                                 @foreach ($jobTitles as $jobTitle)
                                     <option value="{{ $jobTitle->id }}">{{ $jobTitle->jobTitleName }}</option>
                                 @endforeach
@@ -79,7 +77,7 @@
                         </div>
                         <div class="form-group col-md-4">
                             <label for="phone">Phone</label>
-                            <input type="number" class="form-control" name="phone" id="phone" maxlength="20" required>
+                            <input type="text" class="form-control" name="phone" id="phone" maxlength="20" required>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="email">Email</label>
