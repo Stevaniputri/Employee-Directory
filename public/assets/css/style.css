@@ -1,7 +1,7 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: #f1f1f1;
+    background-color: #F5F7FA;
 }
 
 label {
@@ -15,6 +15,7 @@ label {
 }
 
 .card {
+    min-height: 500px;
     border: none;
     border-radius: 20px;
 }
@@ -24,31 +25,13 @@ label {
     border: none;
 }
 
-.modal-header {
-    background-color: #ffffff;
-}
-
-.modal-dialog {
-    width: 800px;
-}
-
-.modal-dialog-centered {
-    display: flex;
-    align-items: center;
-}
-
-.modal-content {
-    border: none;
-    border-radius: 20px;
-}
-
 .btn {
     font-size: 12px;
     border-radius: 20px;
 }
 
 .modal-dialog {
-    max-width: 80%;
+    max-width: 50%;
     margin: 1.75rem auto;
 }
 
@@ -56,10 +39,12 @@ label {
     height: auto;
     max-height: calc(100vh - 3.5rem);
     overflow-y: auto;
+    border: none;
+    border-radius: 20px;
 }
 
 .modal-header {
-    background-color: #f7f7f7;
+    background-color: #ffffff;
     border-bottom: 1px solid #dee2e6;
 }
 
